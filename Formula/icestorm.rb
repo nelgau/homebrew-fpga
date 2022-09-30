@@ -4,7 +4,6 @@ class Icestorm < Formula
   head "https://github.com/YosysHQ/icestorm.git"
 
   depends_on "pkg-config" => :build
-  depends_on "gnu-sed" => :build
   depends_on "libftdi"
   depends_on "python@3.10"
 
