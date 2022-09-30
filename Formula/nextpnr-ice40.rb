@@ -1,5 +1,5 @@
 class NextpnrIce40 < Formula
-  desc "portable FPGA place-and-route tool"
+  desc "Portable FPGA place-and-route tool (iCE40)"
   homepage "https://github.com/YosysHQ/nextpnr"
   head "https://github.com/YosysHQ/nextpnr.git"
 
@@ -13,8 +13,8 @@ class NextpnrIce40 < Formula
   depends_on "icestorm"
 
   def install
-    system "cmake", "-DARCH=ice40", ".", *std_cmake_args, "-DBoost_NO_BOOST_CMAKE=on", "-DBUILD_TESTS=OFF", "-DICEBOX_ROOT=#{HOMEBREW_PREFIX}/share/icebox"
+    system "cmake", "-DARCH=ice40", ".", *std_cmake_args, "-DBoost_NO_BOOST_CMAKE=on", \
+        "-DBUILD_TESTS=OFF", "-DICEBOX_ROOT=#{HOMEBREW_PREFIX}/share/icebox"
     system "make", "install"
   end
-
 end

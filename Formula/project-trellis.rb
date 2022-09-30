@@ -1,5 +1,5 @@
 class ProjectTrellis < Formula
-  desc "tools for documenting and working with ECP5 FPGA files"
+  desc "Tools for documenting and working with ECP5 FPGA files"
   homepage "https://github.com/SymbiFlow/prjtrellis"
   head "https://github.com/SymbiFlow/prjtrellis.git"
 
@@ -11,7 +11,6 @@ class ProjectTrellis < Formula
 
   def install
     cd "libtrellis" do
-
       # Modify libtrellis to not depend on local tags, as we're not rapidly
       # rebuilding as the CMake script assumes.
       inreplace "CMakeLists.txt", "git describe", "git describe --always"
@@ -20,5 +19,4 @@ class ProjectTrellis < Formula
       system "make", "install"
     end
   end
-
 end

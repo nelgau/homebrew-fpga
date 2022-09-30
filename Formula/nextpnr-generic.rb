@@ -1,5 +1,5 @@
 class NextpnrGeneric < Formula
-  desc "portable FPGA place-and-route tool"
+  desc "Portable FPGA place-and-route tool (generic)"
   homepage "https://github.com/YosysHQ/nextpnr"
   head "https://github.com/YosysHQ/nextpnr.git"
 
@@ -15,5 +15,4 @@ class NextpnrGeneric < Formula
     system "cmake", "-DARCH=generic", ".", *std_cmake_args, "-DBUILD_TESTS=OFF"
     system "make", "install"
   end
-
 end

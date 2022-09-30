@@ -1,5 +1,5 @@
 class NextpnrEcp5 < Formula
-  desc "portable FPGA place-and-route tool"
+  desc "Portable FPGA place-and-route tool (ECP5)"
   homepage "https://github.com/YosysHQ/nextpnr"
   head "https://github.com/YosysHQ/nextpnr.git"
 
@@ -17,5 +17,4 @@ class NextpnrEcp5 < Formula
        ".", *std_cmake_args, "-DBoost_NO_BOOST_CMAKE=on", "-DBUILD_TESTS=OFF"
     system "make", "install"
   end
-
 end
