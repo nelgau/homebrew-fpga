@@ -6,7 +6,7 @@ class Icestorm < Formula
   depends_on "pkg-config" => :build
   depends_on "gnu-sed" => :build
   depends_on "libftdi"
-  depends_on "python"
+  depends_on "python@3.10"
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
