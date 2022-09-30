@@ -12,7 +12,13 @@ class NextpnrGeneric < Formula
   depends_on "qt5"
 
   def install
-    system "cmake", "-DARCH=generic", ".", *std_cmake_args, "-DBUILD_TESTS=OFF"
-    system "make", "install"
+    args = %W[
+      -DARCH=generic
+      -DBUILD_TESTS=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 end

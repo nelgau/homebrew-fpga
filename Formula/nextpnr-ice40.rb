@@ -13,8 +13,15 @@ class NextpnrIce40 < Formula
   depends_on "icestorm"
 
   def install
-    system "cmake", "-DARCH=ice40", ".", *std_cmake_args, "-DBoost_NO_BOOST_CMAKE=on", \
-        "-DBUILD_TESTS=OFF", "-DICEBOX_ROOT=#{HOMEBREW_PREFIX}/share/icebox"
-    system "make", "install"
+    args = %W[
+      -DARCH=ice40
+      -DICEBOX_ROOT=#{HOMEBREW_PREFIX}/share/icebox
+      -DBoost_NO_BOOST_CMAKE=on
+      -DBUILD_TESTS=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 end

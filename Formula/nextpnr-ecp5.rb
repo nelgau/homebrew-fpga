@@ -13,8 +13,15 @@ class NextpnrEcp5 < Formula
   depends_on "project-trellis"
 
   def install
-    system "cmake", "-DARCH=ecp5", "-DTRELLIS_INSTALL_PREFIX=#{HOMEBREW_PREFIX}", \
-       ".", *std_cmake_args, "-DBoost_NO_BOOST_CMAKE=on", "-DBUILD_TESTS=OFF"
-    system "make", "install"
+    args = %W[
+      -DARCH=ecp5
+      -DTRELLIS_INSTALL_PREFIX=#{HOMEBREW_PREFIX}
+      -DBoost_NO_BOOST_CMAKE=on
+      -DBUILD_TESTS=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 end
