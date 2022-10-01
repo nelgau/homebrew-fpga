@@ -3,9 +3,12 @@ class ProjectTrellis < Formula
   homepage "https://github.com/YosysHQ/prjtrellis"
   head "https://github.com/YosysHQ/prjtrellis.git"
 
-  depends_on "cmake" => :build
+  depends_on "boost" => :build
   depends_on "boost-python3" => :build
+  depends_on "cmake" => :build
+
   depends_on "python@3.10"
+
   depends_on "libftdi" => :recommended
   depends_on "open-ocd" => :recommended
 

@@ -4,13 +4,14 @@ class NextpnrIce40 < Formula
   head "https://github.com/YosysHQ/nextpnr.git"
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
   depends_on "eigen" => :build
-  depends_on "python@3.10"
+  depends_on "pkg-config" => :build
+
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "qt5"
   depends_on "icestorm"
+  depends_on "python@3.10"
+  depends_on "qt5"
 
   def install
     args = %W[
