@@ -11,7 +11,7 @@ class NextpnrNexus < Formula
   depends_on "boost-python3"
   depends_on "project-oxide"
   depends_on "python@3.10"
-  depends_on "qt5"
+  depends_on "qt@5"
 
   def install
     args = %W[

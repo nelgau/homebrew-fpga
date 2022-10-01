@@ -10,7 +10,7 @@ class NextpnrGeneric < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "python@3.10"
-  depends_on "qt5"
+  depends_on "qt@5"
 
   def install
     args = %w[
