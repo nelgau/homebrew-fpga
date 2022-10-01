@@ -12,7 +12,7 @@ class NextpnrGeneric < Formula
   depends_on "qt5"
 
   def install
-    args = %W[
+    args = %w[
       -DARCH=generic
       -DBUILD_TESTS=OFF
     ]

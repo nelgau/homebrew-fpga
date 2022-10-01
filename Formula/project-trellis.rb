@@ -15,7 +15,7 @@ class ProjectTrellis < Formula
       # rebuilding as the CMake script assumes.
       inreplace "CMakeLists.txt", "git describe", "git describe --always"
 
-      args = %W[
+      args = %w[
         -DBoost_NO_BOOST_CMAKE=on
       ]
 
