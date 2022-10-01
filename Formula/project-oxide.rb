@@ -1,5 +1,5 @@
 class ProjectOxide < Formula
-  desc "Documenting Lattice's 28nm \"Nexus\" FPGA parts."
+  desc "Documenting Lattice's 28nm \"Nexus\" FPGA parts"
   homepage "https://github.com/gatecat/prjoxide"
   head "https://github.com/gatecat/prjoxide.git"
 
